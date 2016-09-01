@@ -1,0 +1,1 @@
+var data = {"a":{"slug":"bushwick-artisan","layout":"centered","body":"<h1>Wes Anderson pop-up Bushwick artisan</h1><h2>YOLO</h2>","title":"Wes Anderson pop-up Bushwick artisan","updatedAt":"2016-09-01T19:15:17.000Z"},"b":{"slug":"another-title","layout":"foobar","body":"<h1>This is the title</h1><h2>Hello</h2>","title":"This is the title","updatedAt":"2016-09-01T19:15:24.000Z"}}
