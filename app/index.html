@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Docs</title>
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+
+    <input type="text" id="nav-filter">
 
     <div id="nav"></div>
     <div id="entires"></div>
 
     <script id="hbs-nav" type="text/x-handlebars-template">
         {{#each this}}
-        <div class="nav__item">{{title}}</div>
+        <div class="nav__item">
+            <a href="#{{createID title}}">{{title}}</a>
+        </div>
         {{/each}}
     </script>
 
     <script id="hbs-entry" type="text/x-handlebars-template">
     {{#each this}}
       <div class="entry">
+        <h1 id="{{createID title}}">{{title}}</h1>
         <div class="body">
-          {{{body}}}
+            {{{body}}}
         </div>
       </div>
     {{/each}}
