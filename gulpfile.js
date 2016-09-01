@@ -15,7 +15,10 @@ marked.setOptions({
     renderer: renderer,
     flattenIndex: true,
     smartypants: true,
-    tables: true
+    tables: true,
+    highlight: function (code) {
+      return require('highlight.js').highlightAuto(code).value;
+    }
 });
 
 gulp.task('default', () => {

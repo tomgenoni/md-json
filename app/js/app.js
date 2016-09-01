@@ -11,12 +11,15 @@ filter.addEventListener('keyup',filterNav);
 // Functions
 
 function filterNav() {
-    var inputValue = filter.value.toLowerCase();
+    var inputValue = filter.value;
+    if (inputValue == null || inputValue == ' ') return;
+
     var navItems = document.querySelectorAll('#nav .nav__item');
     navItems.forEach(function(item, index){
-        item.classList.remove('hidden')
+        item.classList.remove('hidden');
+        // Both strings lowercase to equalize
         var text = item.textContent.toLowerCase();
-        if ( !text.includes(inputValue) ) {
+        if ( !text.includes(inputValue.toLowerCase()) ) {
             item.classList.add('hidden');
         }
     });
