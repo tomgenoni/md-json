@@ -1,7 +1,7 @@
 ---
 slug: another-title
 layout: foobar
-title: This is the title
+title: Forms
 ---
 
 ## Hello

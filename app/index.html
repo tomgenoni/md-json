@@ -7,15 +7,22 @@
     <title>Docs</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/arduino-light.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-    <input type="text" id="nav-filter">
+    <div class="header">
+        <div class="logo">Logo</div>
+        <div style="margin-left:auto;position: relative;">
+            <input id="nav-filter" type="text">
+            <div id="nav"></div>
+        </div>
+    </div>
 
-    <div id="nav"></div>
+
     <div id="entires"></div>
 
-    <script id="hbs-nav" type="text/x-handlebars-template">
+    <script id="hbs-filter" type="text/x-handlebars-template">
         {{#each this}}
         <div class="nav__item">
             <a href="#{{createID title}}">{{title}}</a>

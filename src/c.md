@@ -1,7 +1,7 @@
 ---
 slug: another-title
 layout: foobar
-title: Oh Yes What a Title
+title: Foobar
 ---
 
 ## Hello

@@ -1,7 +1,7 @@
 ---
 slug: another-title
 layout: foobar
-title: Strings are fun to play with
+title: Progress Bar
 ---
 
 ## Hello
