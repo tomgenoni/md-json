@@ -19,7 +19,7 @@ marked.setOptions({
 });
 
 gulp.task('default', () => {
-  gulp.src('./src/*.md')
+  gulp.src('./src/**/*.md')
     .pipe(gutil.buffer())
     .pipe(markdownToJSON(marked, 'app.json'))
     .pipe(insert.prepend('var data = '))

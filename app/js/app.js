@@ -28,7 +28,7 @@ var hbsEntry = document.querySelector('#hbs-entry');
 var hbsNav   = document.querySelector('#hbs-nav');
 
 Handlebars.registerHelper('createID', function(context, options) {
-    id = context.replace(/([^A-Za-z0-9[\]{}_.:-])\s?/g, '').toLowerCase();
+    id = context.toLowerCase().replace(/[^\w]+/g, '-');
     return id;
 });
 
