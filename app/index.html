@@ -24,21 +24,28 @@
 
     <script id="hbs-filter" type="text/x-handlebars-template">
         {{#each this}}
-        <div class="nav__item">
-            <a href="#{{createID title}}">{{title}}</a>
-        </div>
+        <h4 class="title">{{@key}}</h4>
+            {{#each this}}
+            <div class="nav__item">
+                <a href="#{{createID title}}">{{title}}</a>
+            </div>
+            {{/each}}
         {{/each}}
     </script>
 
+
     <script id="hbs-entry" type="text/x-handlebars-template">
-    {{#each this}}
-      <div class="entry">
-        <h1 id="{{createID title}}">{{title}}</h1>
-        <div class="body">
-            {{{body}}}
-        </div>
-      </div>
-    {{/each}}
+        {{#each this}}
+        <h4 class="title">{{@key}}</h4>
+            {{#each this}}
+              <div class="entry">
+                <h1 id="{{createID title}}">{{title}}</h1>
+                <div class="body">
+                    {{{body}}}
+                </div>
+              </div>
+            {{/each}}
+        {{/each}}
     </script>
 
 
