@@ -4,7 +4,8 @@ var gulp           = require('gulp');
     gutil          = require('gulp-util'),
     browserSync    = require('browser-sync').create()
     replace        = require('gulp-replace'),
-    insert         = require('gulp-insert');
+    insert         = require('gulp-insert'),
+    ghPages        = require('gulp-gh-pages');
 
 
 // Remove IDs from headings
@@ -47,6 +48,11 @@ gulp.task('watch', function () {
     gulp.watch("src/**/*.md", ['build']);
     gulp.watch("app/**/*.{json,js,css}").on('change', browserSync.reload);
     gulp.watch("app/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./app/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['build', 'serve', 'watch']);
