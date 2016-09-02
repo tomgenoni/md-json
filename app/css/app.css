@@ -1,3 +1,25 @@
+
+@font-face {
+    font-family: avenir;
+    font-weight: 300;
+    src: url("../fonts/avenir-light.otf");
+}
+@font-face {
+    font-family: avenir;
+    src: url("../fonts/avenir-book.otf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: avenir;
+    src: url("../fonts/avenir-medium.otf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: avenir;
+    src: url("../fonts/avenir-black.otf");
+    font-weight: 700;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -13,11 +35,11 @@ html {
 
 body {
     background: #fff;
-    font-family: Lato;
+    font-family: avenir;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
-    font-size: 15px;
+    font-size: 16px;
     color: #4e4d4d;
 }
 
@@ -31,7 +53,7 @@ body:before {
 h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 h1 {
@@ -84,12 +106,20 @@ h2 {
     display: block;
     border-radius: 3px;
     margin-bottom: 10px;
-    font-size: 13px;
     width: 100%;
+    font-size: 14px;
+    color: #4e4d4d;
+    outline:  none;
 }
 
+#nav-filter:active,
+#nav-filter:focus {
+    border-color: #6babf5;
+}
+
+
 #nav {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #nav a {
@@ -109,6 +139,8 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
+    font-weight: 500;
+    opacity: .7;
 }
 
 .is-hidden {
@@ -137,7 +169,7 @@ pre {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #fafafa url(../i/pin.svg) center center no-repeat;
+    background: #eee url(../i/pin.svg) center center no-repeat;
     background-size: 70% auto;
     display: inline-block;
     width: 28px;
