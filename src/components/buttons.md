@@ -27,6 +27,7 @@ Use this button for secondary actions. There are three sizes that can be used (l
 ```html
 <button class="button">Up State</button>
 ```
+
 ## Tertiary Button
 
 Use this button for secondary actions. There are three sizes that can be used (large, medium, & small)
