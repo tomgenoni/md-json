@@ -6,43 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Docs</title>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/elements.css">
     <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/arduino-light.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
 </head>
 <body>
 
     <div class="header">
-        <div class="logo">Logo</div>
+        <div class="logo">Thumbprint</div>
         <div style="margin-left:auto;position: relative;">
             <input id="nav-filter" type="text">
             <div id="nav"></div>
         </div>
     </div>
 
-
     <div id="entires"></div>
 
     <script id="hbs-filter" type="text/x-handlebars-template">
         {{#each this}}
-        <div class="nav__item">
-            <a href="#{{createID title}}">{{title}}</a>
-        </div>
+        <div class="nav__title">{{@key}}</div>
+            {{#each this}}
+            <div class="nav__item">
+                <a href="#{{createID title}}">{{title}}</a>
+            </div>
+            {{/each}}
         {{/each}}
     </script>
 
+
     <script id="hbs-entry" type="text/x-handlebars-template">
-    {{#each this}}
-      <div class="entry">
-        <h1 id="{{createID title}}">{{title}}</h1>
-        <div class="body">
-            {{{body}}}
-        </div>
-      </div>
-    {{/each}}
+        {{#each this}}
+        <h4 class="section__title">{{@key}}</h4>
+            {{#each this}}
+              <div class="entry">
+                <h1 id="{{createID title}}">{{title}}</h1>
+                <div class="body">
+                    {{{body}}}
+                </div>
+              </div>
+            {{/each}}
+        {{/each}}
     </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+
     <script src="data/app.json"></script>
     <script src="js/app.js"></script>
 </body>

@@ -7,6 +7,7 @@ var nav       = document.querySelector('#nav');
 // Listeners
 
 navFilter.addEventListener('keyup', filterNav);
+nav.addEventListener('click', clearFilter);
 window.addEventListener('load', init);
 
 
@@ -27,10 +28,15 @@ function filterNav() {
     });
 }
 
+function clearFilter() {
+    navFilter.value = '';
+    filterNav();
+}
+
 // Handlebars
 
-var hbsEntry  = document.querySelector('#hbs-entry');
 var hbsFilter = document.querySelector('#hbs-filter');
+var hbsEntry  = document.querySelector('#hbs-entry');
 
 Handlebars.registerHelper('createID', function(context, options) {
     id = context.toLowerCase().replace(/[^\w]+/g, '-');
@@ -48,3 +54,19 @@ function init() {
     var html                = template(data);
     entires.innerHTML       = html;
 }
+
+// Copy to clipboard
+
+var clipboard = new Clipboard('.clipboard', {
+    target: function(trigger) {
+        return trigger.previousSibling;
+    }
+});
+
+clipboard.on('success', function(e) {
+    e.trigger.classList.add("success")
+    setTimeout(function(){
+        e.trigger.classList.remove("success")
+    }, 2000)
+    e.clearSelection();
+});
