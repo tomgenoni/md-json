@@ -1,2 +1,4 @@
 node_modules
 app/data/app.json
+
+.DS_Store
