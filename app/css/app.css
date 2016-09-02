@@ -77,8 +77,8 @@ h2 {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
-    padding: 50px 20px 30px;
+    width: 220px;
+    padding: 50px 20px 30px 40px;
     overflow-y: scroll;
 }
 
@@ -88,8 +88,8 @@ h2 {
 }
 
 #entires {
-    max-width: 950px;
-    padding-left: 250px;
+    max-width: 970px;
+    padding-left: 270px;
 }
 
 #entires p {
@@ -133,8 +133,20 @@ h2 {
 }
 
 .nav__item a:focus {
-    background: red;
     outline: none;
+    position: relative;
+}
+.nav__item a:focus:before {
+    content:'';
+    position: absolute;
+    top: 6px;
+    left: -10px;
+
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #3f93f3;
 }
 
 .nav__title,
