@@ -38,6 +38,7 @@ function clearFilter() {
 var hbsFilter = document.querySelector('#hbs-filter');
 var hbsEntry  = document.querySelector('#hbs-entry');
 
+// Generate IDs so the nav items point to the IDs in the content
 Handlebars.registerHelper('createID', function(context, options) {
     id = context.toLowerCase().replace(/[^\w]+/g, '-');
     return id;

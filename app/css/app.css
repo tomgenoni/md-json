@@ -132,6 +132,11 @@ h2 {
     border-bottom: none;
 }
 
+.nav__item a:focus {
+    background: red;
+    outline: none;
+}
+
 .nav__title,
 .section__title {
     padding-top: 20px;
